@@ -6,7 +6,7 @@
 
 .Highlight .itens {
     position: absolute;
-    top: calc(22.5vh - 30vh);
+    top: calc(-50vh*0.35);
     z-index: 1;
 
     display: flex;
@@ -16,16 +16,21 @@
 
     padding: 0 10px;
     margin-top: 10px;
-
-    border: 1px solid gray;
 }
 
-.Highlight .itens>div {
-    border: 1px solid red;
+.Highlight .itens>img {
+    border: 1px solid gray;
+    border-radius: 8px;
     width: 30vw;
+    height: calc(100% + 15vh);
+    cursor: pointer;
+}
+
+.Highlight .itens>img:hover {
+    opacity: 0.9;
+    transform: scale(1.13);
 }
 
 .Highlight .fixed-element {
-    background-color: white;
     height: calc(20vh);
 }
