@@ -1,0 +1,39 @@
+.Banner {
+    display: flex;
+    position: relative;
+    background-color: red;
+    height: 30vh;
+}
+
+.Banner .carousel {
+    display: flex;
+    position: absolute;
+    height: 100%;
+    background-color: pink;
+    transition: 0.9s;
+}
+
+.Banner .carousel .item {
+    width: 100vw;
+    height: 30vh;
+    position: relative;
+    display: flex;
+    background-color: blue;
+    align-items: center;
+    justify-content: center;
+}
+
+.Banner .buttons {
+    display: flex;
+    justify-content: space-between;
+    height: 22.5vh;
+    width: 100%;
+}
+
+.Banner .buttons button {
+    height: 100%;
+    width: 13%;
+    opacity: 0.5;
+    border: none;
+    border-radius: 3px;
+}
