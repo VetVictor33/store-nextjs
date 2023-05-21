@@ -5,12 +5,12 @@ import Image from 'next/image'
 import './Categories.css'
 
 const categoryMock = [
-    { id: 1, name: 'Eletrônicos' },
-    { id: 2, name: 'Cozinha' },
-    { id: 3, name: 'Lar' },
-    { id: 4, name: 'Roupas' },
-    { id: 5, name: 'Sapatos' },
-    { id: 6, name: 'Esporte' },
+    { id: 1, name: 'Eletrônicos', slug: 'eletronicos' },
+    { id: 2, name: 'Cozinha', slug: 'cozinha' },
+    { id: 3, name: 'Lar', slug: 'lar' },
+    { id: 4, name: 'Roupas', slug: 'roupas' },
+    { id: 5, name: 'Sapatos', slug: 'sapatos' },
+    { id: 6, name: 'Esporte', slug: 'esporte' },
 ]
 export default function Categories() {
     const [page, setPage] = useState(0)

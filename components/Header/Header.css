@@ -1,9 +1,82 @@
 .Header {
     display: flex;
     align-items: center;
+    justify-content: space-around;
+
+    position: relative;
+
+    padding: 5px;
 }
 
 .Header .logo>img {
     border-radius: 50% 50% 0;
+    cursor: pointer;
 
+}
+
+.Header a:hover {
+    opacity: 0.8;
+}
+
+.Header .shown-links {
+    display: flex;
+    gap: 15px
+}
+
+.Header .categories-list:modal {
+    max-height: unset;
+    border: unset;
+    overflow: hidden;
+    border-radius: 0 8px;
+
+    height: 100vh;
+    background: linear-gradient(to bottom,
+            transparent,
+            rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+
+    display: flex;
+    flex-direction: column;
+    animation: slide-in 1s;
+    width: 50vw;
+}
+
+
+.Header .categories-list .highlight {
+    background-color: rgba(255, 228, 196, 0.459);
+    position: relative;
+}
+
+.Header .categories-list .highlight:hover {
+    opacity: 0.3;
+}
+
+.Header .categories-list .close-bt {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.Header .categories-list .title {
+    text-transform: uppercase;
+    padding: 10px;
+    text-align: center;
+}
+
+.Header .categories-list .item {
+    text-align: center;
+    padding: 5px;
+}
+
+.Header .categories-list .item:hover {
+    background-color: rgba(0, 0, 0, 0.308);
+}
+
+@keyframes slide-in {
+    from {
+        width: 0vw;
+    }
+
+    to {
+        width: 50vw;
+    }
 }
