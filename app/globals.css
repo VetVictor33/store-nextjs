@@ -73,6 +73,7 @@ html,
 body {
   max-width: var(--max-width);
   overflow-x: hidden;
+  margin: auto;
 }
 
 body {

@@ -2,13 +2,23 @@
 
 import { useEffect, useState } from "react"
 import './Banner.css'
+import Image from "next/image";
+import Placeholder from '@/public/assets/placeholder.jpg'
+import Banner1 from '@/public/assets/banners/banner1.jpg'
+import Banner2 from '@/public/assets/banners/banner2.jpg'
+import Banner3 from '@/public/assets/banners/banner3.jpg'
+import Banner4 from '@/public/assets/banners/banner4.jpg'
+import Banner5 from '@/public/assets/banners/banner5.jpg'
+import Banner6 from '@/public/assets/banners/banner6.jpg'
 
+let myInterval;
 const bannerMock = [
-    { id: 1 },
-    { id: 2 },
-    { id: 3 },
-    { id: 4 },
-    { id: 5 },
+    { id: 1, img: Banner1 },
+    { id: 2, img: Banner2 },
+    { id: 3, img: Banner3 },
+    { id: 4, img: Banner4 },
+    { id: 5, img: Banner5 },
+    { id: 6, img: Banner6 }
 ]
 
 export default function Banner() {
@@ -16,6 +26,10 @@ export default function Banner() {
     const [transition, setTransition] = useState(1);
 
     const handlePageChange = (change) => {
+        clearInterval(myInterval);
+        myInterval = setInterval(() => {
+            handlePageChange('+')
+        }, 5000);
         switch (change) {
             case '-':
                 setPage((prevPage) => {
@@ -46,10 +60,9 @@ export default function Banner() {
 
 
     useEffect(() => {
-        const myInterval = setInterval(() => {
+        myInterval = setInterval(() => {
             handlePageChange('+')
         }, 5000);
-
         return () => clearInterval(myInterval);
     }, [])
 
@@ -57,7 +70,7 @@ export default function Banner() {
         <div className="Banner">
             <div className="carousel" style={{ transform: `translateX(${page * 100}vw)`, transition: `${transition}s` }}>
                 {bannerMock.map(item => (
-                    <div key={item.id} className="item">{item.id}</div>
+                    <Image key={item.id} className="image" src={item.img} />
                 ))}
             </div>
             <div className="buttons">
