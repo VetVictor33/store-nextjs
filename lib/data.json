@@ -1,0 +1,138 @@
+{
+  "produtos": [
+    {
+      "id": 1,
+      "nome": "Camiseta",
+      "preco": 2999,
+      "categoria": "Vestuário"
+    },
+    {
+      "id": 2,
+      "nome": "Tênis",
+      "preco": 7999,
+      "categoria": "Calçados"
+    },
+    {
+      "id": 3,
+      "nome": "Celular",
+      "preco": 149999,
+      "categoria": "Eletrônicos"
+    },
+    {
+      "id": 4,
+      "nome": "Livro",
+      "preco": 4999,
+      "categoria": "Livros"
+    },
+    {
+      "id": 5,
+      "nome": "Bolsa",
+      "preco": 5999,
+      "categoria": "Acessórios"
+    },
+    {
+      "id": 6,
+      "nome": "Relógio",
+      "preco": 9999,
+      "categoria": "Acessórios"
+    },
+    {
+      "id": 7,
+      "nome": "Notebook",
+      "preco": 349999,
+      "categoria": "Eletrônicos"
+    },
+    {
+      "id": 8,
+      "nome": "Shorts",
+      "preco": 1999,
+      "categoria": "Vestuário"
+    },
+    {
+      "id": 9,
+      "nome": "Câmera",
+      "preco": 249999,
+      "categoria": "Eletrônicos"
+    },
+    {
+      "id": 10,
+      "nome": "Meias",
+      "preco": 999,
+      "categoria": "Vestuário"
+    },
+    {
+      "id": 11,
+      "nome": "Perfume",
+      "preco": 5999,
+      "categoria": "Beleza"
+    },
+    {
+      "id": 12,
+      "nome": "Óculos de sol",
+      "preco": 7999,
+      "categoria": "Acessórios"
+    },
+    {
+      "id": 13,
+      "nome": "Monitor",
+      "preco": 399999,
+      "categoria": "Eletrônicos"
+    },
+    {
+      "id": 14,
+      "nome": "Calça jeans",
+      "preco": 5999,
+      "categoria": "Vestuário"
+    },
+    {
+      "id": 15,
+      "nome": "Fone de ouvido",
+      "preco": 7999,
+      "categoria": "Eletrônicos"
+    },
+    {
+      "id": 16,
+      "nome": "Bolsa esportiva",
+      "preco": 3499,
+      "categoria": "Acessórios"
+    },
+    {
+      "id": 17,
+      "nome": "Camisa social",
+      "preco": 4999,
+      "categoria": "Vestuário"
+    },
+    {
+      "id": 18,
+      "nome": "Tablet",
+      "preco": 259999,
+      "categoria": "Eletrônicos"
+    },
+    {
+      "id": 19,
+      "nome": "Chapéu",
+      "preco": 1999,
+      "categoria": "Acessórios"
+    },
+    {
+      "id": 20,
+      "nome": "Saia",
+      "preco": 3999,
+      "categoria": "Vestuário"
+    }
+  ],
+  "destaques": [
+    {
+      "id": 3
+    },
+    {
+      "id": 16
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 9
+    }
+  ]
+}
