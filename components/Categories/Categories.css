@@ -1,0 +1,41 @@
+.Categories {
+    margin: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.Categories .carousel {
+    height: 100%;
+    display: flex;
+    gap: 5px;
+    transition: 1s;
+}
+
+.Categories .img-div {
+    display: flex;
+}
+
+.Categories .img-div img {
+    width: calc(33vw - ((25px/3)));
+    height: auto;
+}
+
+.Categories .buttons {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Categories .buttons button {
+    box-sizing: border-box;
+    height: 90%;
+    width: 5vw;
+    opacity: 0.3;
+    border: none;
+    border-radius: 3px;
+
+}
