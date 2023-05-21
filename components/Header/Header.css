@@ -1,0 +1,9 @@
+.Header {
+    display: flex;
+    align-items: center;
+}
+
+.Header .logo>img {
+    border-radius: 50% 50% 0;
+
+}

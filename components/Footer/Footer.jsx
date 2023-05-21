@@ -4,10 +4,15 @@ import Facebook from '@/public/assets/social-media-icons/facebook.png'
 import Instagram from '@/public/assets/social-media-icons/instagram.png'
 import Twitter from '@/public/assets/social-media-icons/twitter.png'
 import Whatsapp from '@/public/assets/social-media-icons/whatsapp.png'
+import Logo from '@/public/assets/logo.jpg'
+
 
 export default function Footer() {
   return (
     <footer className='Footer'>
+      <div className="logo">
+        <Image src={Logo} width={60} />
+      </div>
       <div className='social-media'>
         <Image src={Facebook} alt='facebook' width={'30'} height={'30'} />
         <Image src={Instagram} alt='instagram' width={'30'} height={'30'} />

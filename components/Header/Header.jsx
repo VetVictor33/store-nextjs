@@ -1,10 +1,15 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import Logo from '@/public/assets/logo.jpg'
+import './Header.css'
 
 export default function Header() {
   return (
     <header className='Header'>
-      <div className="logo">logo</div>
+      <div className="logo">
+        <Image src={Logo} width={30} />
+      </div>
       <Link href={'/cart'}>Carrinho</Link>
       <nav>
         <Link href={'/'}>Destaques</Link>
