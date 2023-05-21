@@ -10,6 +10,8 @@ import Banner3 from '@/public/assets/banners/banner3.jpg'
 import Banner4 from '@/public/assets/banners/banner4.jpg'
 import Banner5 from '@/public/assets/banners/banner5.jpg'
 import Banner6 from '@/public/assets/banners/banner6.jpg'
+import Arrow from '@/public/assets/icons/arrow.svg'
+
 
 let myInterval;
 const bannerMock = [
@@ -74,8 +76,12 @@ export default function Banner() {
                 ))}
             </div>
             <div className="buttons">
-                <button onClick={() => handlePageChange('-')}>{'<'}</button>
-                <button onClick={() => handlePageChange('+')}>{'>'}</button>
+                <div className='bt' onClick={() => handlePageChange('-')}>
+                    <Image src={Arrow} alt='<' />
+                </div>
+                <div className='bt' onClick={() => handlePageChange('+')}>
+                    <Image src={Arrow} alt='>' />
+                </div>
             </div>
         </div>
     )

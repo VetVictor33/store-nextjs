@@ -52,8 +52,8 @@ export default function Footer() {
         <p>Av. Nextjs, JavaScrip - ESMAScript@2023 - Rio de Janeiro, Brasil</p>
         <p>faleconosco@ajuda.com.br</p>
 
-        <h1>Art Credits:</h1>
-        <p>Banner images: <a href="https://www.freepik.com/">Freepik</a></p>
+        <h3>Art Credits:</h3>
+        <a href="https://www.freepik.com/">Freepik</a>
       </div>
     </footer>
   )

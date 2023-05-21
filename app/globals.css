@@ -105,6 +105,13 @@ a {
   opacity: 0.8;
 }
 
+.bt:hover {
+  border-radius: 3px;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.226);
+  z-index: 3;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
