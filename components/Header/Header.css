@@ -5,7 +5,7 @@
 
     position: relative;
 
-    padding: 5px;
+    padding: var(--lateral-padding)
 }
 
 .Header .logo>img {
@@ -14,13 +14,18 @@
 
 }
 
+.Header a,
+.Header title {
+    font-size: var(--big-font);
+}
+
 .Header a:hover {
     opacity: 0.8;
 }
 
 .Header .shown-links {
     display: flex;
-    gap: 15px
+    gap: calc(var(--regular-gap) + 5px)
 }
 
 .Header .categories-list:modal {

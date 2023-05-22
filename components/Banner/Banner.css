@@ -1,16 +1,13 @@
 .Banner {
     display: flex;
     position: relative;
-    background-color: red;
-    height: 50vh;
+    height: var(--banner-height)
 }
 
 .Banner .carousel {
     display: flex;
     position: absolute;
     height: 100%;
-    background-color: pink;
-    transition: 0.9s;
 }
 
 .Banner .carousel .image {
@@ -18,7 +15,6 @@
     height: 50vh;
     position: relative;
     display: flex;
-    background-color: blue;
     align-items: center;
     justify-content: center;
 }
@@ -26,12 +22,13 @@
 .Banner .buttons {
     display: flex;
     justify-content: space-between;
-    height: calc(50vh*0.65);
+    height: calc(var(--banner-height) * 0.75);
     width: 100%;
 }
 
 .Banner .buttons .bt {
     height: 100%;
+    width: var(--bt-width);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -42,8 +39,8 @@
 }
 
 .Banner .buttons .bt img {
-    height: fit-content;
-    width: fit-content;
+    width: var(--bt-icon-size);
+    height: var(--bt-icon-size);
     transform: rotate(270deg);
 }
 

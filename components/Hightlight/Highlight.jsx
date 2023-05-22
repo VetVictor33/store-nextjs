@@ -19,9 +19,6 @@ export default function Highlight() {
                     <Image key={item.id} src={item.img} />
                 ))}
             </div>
-            <div className='fixed-element'>
-
-            </div>
         </div>
     )
 }

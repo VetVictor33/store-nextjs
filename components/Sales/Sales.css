@@ -1,15 +1,16 @@
 .Sales {
-    margin: 10px;
-    overflow: hidden;
     position: relative;
+    overflow: hidden;
+    margin: var(--regular-element-margin)
 }
 
 .Sales .title {
-    font-size: xx-large;
+    width: 100%;
+    position: relative;
+    font-size: var(--big-font);
     text-transform: uppercase;
     text-align: center;
     margin-bottom: 10px;
-    position: relative;
 }
 
 .Sales .title:after {
@@ -27,8 +28,10 @@
 .Sales .carousel {
     height: 100%;
     display: flex;
-    gap: 5px;
+    align-items: center;
+    gap: var(--regular-gap);
     transition: 1s;
+    position: relative;
 }
 
 .Sales .buttons {
@@ -47,14 +50,14 @@
     align-items: center;
     justify-content: center;
     height: 90%;
-    width: 5vw;
+    width: var(--bt-width);
     border: none;
     z-index: 2;
 }
 
 .Sales .buttons .bt img {
-    width: fit-content;
-    height: fit-content;
+    width: var(--bt-icon-size);
+    height: var(--bt-icon-size);
     transform: rotate(270deg);
 
 }
@@ -79,12 +82,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-    padding: 10px 0;
-
-    gap: 10px;
     width: 100%;
-    bottom: 10px;
+    bottom: 5px;
     left: 50%;
     transform: translate(-50%);
 
@@ -94,22 +93,22 @@
 }
 
 .Sales .name {
-    font-size: large;
+    font-size: var(--small-font);
 }
 
 .Sales .prices {
     display: flex;
     justify-content: end;
-    gap: 10px
+    gap: var(--regular-gap)
 }
 
 .Sales .info .old-price {
     text-decoration: line-through;
-    font-size: small;
+    font-size: calc(var(--small-font) - 20%);
 }
 
 .Sales .info .sale-price {
-    font-size: x-large;
+    font-size: var(--small-font);
 }
 
 .Sales .img-div img {

@@ -1,36 +1,31 @@
 .Highlight {
     position: relative;
     height: fit-content;
-    min-height: 20vh;
+    height: calc(var(--highlight-element-high)/2.75);
 }
 
 .Highlight .itens {
     position: absolute;
-    top: calc(-50vh*0.35);
+    top: calc(var(--banner-height)* -0.25);
     z-index: 1;
 
     display: flex;
     width: 100%;
-    height: 20vh;
+    height: fit-content;
     justify-content: space-between;
-
-    padding: 0 10px;
-    margin-top: 10px;
+    padding: 0 var(--lateral-padding);
 }
 
 .Highlight .itens>img {
     border: 1px solid gray;
-    border-radius: 8px;
+    border-radius: var(--regular-border-radious);
     width: 30vw;
-    height: calc(100% + 15vh);
-    cursor: pointer;
+    height: var(--highlight-element-high);
+    opacity: 0.95;
 }
 
 .Highlight .itens>img:hover {
-    opacity: 0.9;
-    transform: scale(1.13);
-}
-
-.Highlight .fixed-element {
-    height: calc(20vh);
+    opacity: 1;
+    transform: scale(1.03);
+    cursor: pointer;
 }

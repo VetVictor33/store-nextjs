@@ -46,7 +46,6 @@ export default function Sales() {
 
   return (
     <div className='Sales'>
-      <p className='title'>Ofertas imperdíveis</p>
       <div className="buttons">
         <div className='bt' onClick={() => handlePageChange('-')}>
           <Image src={Arrow} alt='<' />

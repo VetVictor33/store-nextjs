@@ -29,13 +29,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: var(--regular-gap);
 
     padding: 0 10px;
 }
 
 .Footer .store-info ul {
     list-style: none;
-    gap: 5px
+    gap: var(--regular-gap);
 }
 
 .Footer .top-bt {

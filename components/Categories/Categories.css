@@ -1,13 +1,13 @@
 .Categories {
-    margin: 10px;
     overflow: hidden;
     position: relative;
+    margin: var(--regular-element-margin)
 }
 
 .Categories .carousel {
     height: 100%;
     display: flex;
-    gap: 5px;
+    gap: var(--regular-gap);
     transition: 1s;
 }
 
@@ -27,14 +27,14 @@
     align-items: center;
     justify-content: center;
     height: 90%;
-    width: 5vw;
+    width: var(--bt-width);
     border: none;
     z-index: 2;
 }
 
 .Categories .buttons .bt img {
-    width: fit-content;
-    height: fit-content;
+    width: var(--bt-icon-size);
+    height: var(--bt-icon-size);
     transform: rotate(270deg);
 
 }
@@ -60,10 +60,11 @@
     left: 50%;
     transform: translate(-50%, -50%);
 
-    font-size: xx-large;
+    font-size: var(--mobile-big-font);
     text-align: center;
 
     background-color: rgba(0, 0, 0, 0.274);
+    z-index: 2;
 
 }
 

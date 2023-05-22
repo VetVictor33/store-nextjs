@@ -55,7 +55,7 @@ export default function Footer() {
       <div className='legal-info'>
         <p>CNPJ 12.345.678/0000001-23</p>
         <p>Av. Nextjs, JavaScrip - ESMAScript@2023 - Rio de Janeiro, Brasil</p>
-        <p>faleconosco@ajuda.com.br</p>
+        <p>victorjfeliciano@gmail.com</p>
 
         <h3>Art Credits:</h3>
         <a href="https://www.freepik.com/">Freepik</a>
