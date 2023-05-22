@@ -1,3 +1,4 @@
+"use client"
 import Image from 'next/image'
 import './Footer.css'
 import Facebook from '@/public/assets/social-media-icons/facebook.png'
@@ -5,9 +6,13 @@ import Instagram from '@/public/assets/social-media-icons/instagram.png'
 import Twitter from '@/public/assets/social-media-icons/twitter.png'
 import Whatsapp from '@/public/assets/social-media-icons/whatsapp.png'
 import Logo from '@/public/assets/logo.jpg'
+import { usePathname } from 'next/navigation'
+import Link from 'next/link'
 
 
 export default function Footer() {
+  const path = usePathname()
+
   return (
     <footer className='Footer'>
       <div className="logo">
@@ -43,8 +48,8 @@ export default function Footer() {
         </ul>
       </div>
 
-      <div>
-        <button className='top-bt'>Voltar para o topo</button>
+      <div className='top-bt bt'>
+        <Link href={`${path}`}>Voltar para o topo</Link>
       </div>
 
       <div className='legal-info'>

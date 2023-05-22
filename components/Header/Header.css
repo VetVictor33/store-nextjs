@@ -40,6 +40,10 @@
     width: 50vw;
 }
 
+.Header .categories-list::backdrop {
+    background-color: rgba(0, 0, 0, 0.356)
+}
+
 
 .Header .categories-list .highlight {
     background-color: rgba(255, 228, 196, 0.459);
@@ -50,19 +54,20 @@
     opacity: 0.3;
 }
 
-.Header .categories-list .close-bt {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-}
-
 .Header .categories-list .title {
     text-transform: uppercase;
     padding: 10px;
     text-align: center;
 }
 
+.Header .categories-list .close-bt {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
 .Header .categories-list .item {
+    width: inherit;
     text-align: center;
     padding: 5px;
 }
