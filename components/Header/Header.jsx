@@ -6,6 +6,7 @@ import React, { useRef, useState } from 'react'
 import Logo from '@/public/assets/logo.jpg'
 import './Header.css'
 import MenuDialog from '../MenuDialog/MenuDialog'
+import CartDialog from '../CartDialog/CartDialog'
 
 const categoryMock = [
   { id: 1, name: 'Eletrônicos', slug: 'eletronicos' },
@@ -18,16 +19,27 @@ const categoryMock = [
 
 export default function Header() {
   const menuDialog = useRef(null);
-  const [dialogStatus, setDialogStatus] = useState(false)
+  const cartDialog = useRef(null);
+  const [menuDialogStatus, setMenuDialogStatus] = useState(false);
+  const [cartDialogStatus, setCartDialogStatus] = useState(false);
 
   const handleMenuDialog = () => {
-    if (!dialogStatus) {
+    if (!menuDialogStatus) {
       menuDialog.current.showModal();
     } else {
       menuDialog.current.close();
     }
 
-    setDialogStatus(!dialogStatus)
+    setMenuDialogStatus(!menuDialogStatus)
+  }
+  const handleCartDialog = () => {
+    if (!cartDialogStatus) {
+      cartDialog.current.showModal();
+    } else {
+      cartDialog.current.close();
+    }
+
+    setCartDialogStatus(!cartDialogStatus)
   }
 
 
@@ -47,11 +59,15 @@ export default function Header() {
           menuDialog={menuDialog}
           handleMenuDialog={handleMenuDialog}
           categoryMock={categoryMock}
-          dialogStatus={dialogStatus}
         />
 
       </nav>
-      <Link href={'/cart'}>Carrinho</Link>
+      <p onClick={handleCartDialog}>Carrinho</p>
+      <CartDialog
+        cartDialog={cartDialog}
+        handleCartDialog={handleCartDialog}
+      />
+
     </header>
   )
 }

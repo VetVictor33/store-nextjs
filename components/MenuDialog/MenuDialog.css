@@ -1,0 +1,62 @@
+.MenuDialog:modal {
+    max-height: unset;
+    border: unset;
+    overflow: hidden;
+    border-radius: 0 8px;
+
+    height: 100vh;
+    background: linear-gradient(to bottom,
+            transparent,
+            rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+
+    display: flex;
+    flex-direction: column;
+    animation: slide-in-menu 1s;
+    width: 50vw;
+}
+
+.MenuDialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.356)
+}
+
+
+.MenuDialog .highlight {
+    background-color: rgba(255, 228, 196, 0.459);
+    position: relative;
+}
+
+.MenuDialog .highlight:hover {
+    opacity: 0.3;
+}
+
+.MenuDialog .title {
+    text-transform: uppercase;
+    padding: 10px;
+    text-align: center;
+}
+
+.MenuDialog .close-bt {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.MenuDialog .item {
+    width: inherit;
+    text-align: center;
+    padding: 5px;
+}
+
+.MenuDialog .item:hover {
+    background-color: rgba(0, 0, 0, 0.308);
+}
+
+@keyframes slide-in-menu {
+    from {
+        width: 0vw;
+    }
+
+    to {
+        width: 50vw;
+    }
+}

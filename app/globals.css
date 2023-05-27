@@ -44,13 +44,16 @@
   --regular-element-margin: 20px 10px;
 
   --lateral-padding: 5px;
+  --regular-padding: 5px;
   --regular-gap: 5px;
   --regular-border-radious: 8px;
 
   /* very specific */
   --highlight-element-high: 15vh;
   --banner-height: 50vh;
-  --card-border-radious: 5px
+  --card-border-radious: 5px;
+
+  --cart-modal-width: 30vw;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -111,6 +114,7 @@ a {
 .close-bt {
   height: 30px;
   width: 30px;
+  font-size: var(--small-font);
   display: flex;
   align-items: center;
   justify-content: center;

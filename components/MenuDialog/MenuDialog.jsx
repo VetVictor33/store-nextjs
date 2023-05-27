@@ -1,7 +1,7 @@
 import './MenuDialog.css';
 import Link from 'next/link';
 
-export default function MenuDialog({ menuDialog, handleMenuDialog, categoryMock, dialogStatus }) {
+export default function MenuDialog({ menuDialog, categoryMock, handleMenuDialog, }) {
 
     const handleMenuDialogEvent = (e) => {
         const dimentions = menuDialog.current.getBoundingClientRect();
@@ -11,7 +11,7 @@ export default function MenuDialog({ menuDialog, handleMenuDialog, categoryMock,
     }
 
     return (
-        <dialog ref={menuDialog} className='categories-list' onClick={handleMenuDialogEvent}>
+        <dialog ref={menuDialog} className='MenuDialog' onClick={handleMenuDialogEvent}>
 
             <Link className='title highlight' href={'/'}
                 onClick={handleMenuDialog}>

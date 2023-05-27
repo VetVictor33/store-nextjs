@@ -1,0 +1,12 @@
+.CartItem>img {
+    width: 130px;
+    height: 130px;
+
+    border-radius: var(--regular-border-radious);
+}
+
+.CartItem .name,
+.CartItem .price {
+    text-align: center;
+    font-size: var(--small-font);
+}

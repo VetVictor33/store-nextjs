@@ -1,0 +1,65 @@
+.CartDialog:modal {
+    left: 100%;
+    transform: translate(-100%);
+    max-height: unset;
+    border: unset;
+    overflow-y: scroll;
+    border-radius: 0 8px;
+
+    height: 70vh;
+    background: linear-gradient(to bottom,
+            transparent,
+            rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--regular-gap);
+
+    animation: slide-in-cart 1s;
+    width: var(--cart-modal-width);
+}
+
+.CartDialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.356)
+}
+
+.CartDialog .close-bt {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+}
+
+.CartDialog .header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+
+    background-color: rgba(0, 0, 0, 0.596);
+
+    padding: var(--regular-padding);
+}
+
+.CartDialog .total {
+    position: sticky;
+    bottom: 0;
+
+    width: 100%;
+    text-align: center;
+    padding: var(--regular-padding);
+
+    background-color: black;
+}
+
+@keyframes slide-in-cart {
+    from {
+        width: 0vw;
+    }
+
+    to {
+        width: var(--cart-modal-width)
+    }
+}
