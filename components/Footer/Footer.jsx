@@ -16,7 +16,7 @@ export default function Footer() {
   return (
     <footer className='Footer'>
       <div className="logo">
-        <Image src={Logo} width={60} />
+        <Image src={Logo} width={60} alt='logo' />
       </div>
       <div className='social-media'>
         <Image src={Facebook} alt='facebook' width={'30'} height={'30'} />

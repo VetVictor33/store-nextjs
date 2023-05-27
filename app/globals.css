@@ -49,7 +49,8 @@
 
   /* very specific */
   --highlight-element-high: 15vh;
-  --banner-height: 50vh
+  --banner-height: 50vh;
+  --card-border-radious: 5px
 }
 
 @media (prefers-color-scheme: dark) {
@@ -129,6 +130,15 @@ a {
   cursor: pointer;
   background: rgba(0, 0, 0, 0.226);
   z-index: 3;
+}
+
+.main-title {
+  background-color: #0000005d;
+  font-size: var(--big-font);
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
 }
 
 @media (prefers-color-scheme: dark) {

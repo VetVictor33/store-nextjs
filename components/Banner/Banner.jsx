@@ -72,7 +72,7 @@ export default function Banner() {
         <div className="Banner">
             <div className="carousel" style={{ transform: `translateX(${page * 100}vw)`, transition: `${transition}s` }}>
                 {bannerMock.map(item => (
-                    <Image key={item.id} className="image" src={item.img} />
+                    <Image key={item.id} className="image" src={item.img} alt={`Banner${item.id}`} />
                 ))}
             </div>
             <div className="buttons">

@@ -53,6 +53,10 @@
     transform: scale(1.033);
 }
 
+.Categories .img-div img {
+    border-radius: var(--card-border-radious);
+}
+
 .Categories .img-div .title {
     position: absolute;
     width: 100%;

@@ -1,7 +1,7 @@
 .Sales {
     position: relative;
     overflow: hidden;
-    margin: var(--regular-element-margin)
+    margin: var(--regular-element-margin);
 }
 
 .Sales .title {
@@ -69,6 +69,10 @@
 .Sales .img-div {
     display: flex;
     position: relative;
+}
+
+.Sales .img-div img {
+    border-radius: var(--card-border-radious);
 }
 
 .Sales .img-div:hover {

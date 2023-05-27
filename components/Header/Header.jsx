@@ -2,9 +2,10 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import Logo from '@/public/assets/logo.jpg'
 import './Header.css'
+import MenuDialog from '../MenuDialog/MenuDialog'
 
 const categoryMock = [
   { id: 1, name: 'Eletrônicos', slug: 'eletronicos' },
@@ -16,41 +17,25 @@ const categoryMock = [
 ]
 
 export default function Header() {
-  const dialog = useRef(null);
+  const menuDialog = useRef(null);
   const [dialogStatus, setDialogStatus] = useState(false)
 
-  const handleDialog = () => {
+  const handleMenuDialog = () => {
     if (!dialogStatus) {
-      dialog.current.showModal()
+      menuDialog.current.showModal();
     } else {
-      dialog.current.close()
+      menuDialog.current.close();
     }
+
     setDialogStatus(!dialogStatus)
   }
 
-  useEffect(() => {
-    function handleDialogEvent(e) {
-      const dimentions = dialog.current.getBoundingClientRect();
-      if (e.clientX > dimentions.width) {
-        handleDialog()
-      }
-    }
 
-    if (dialogStatus === true) {
-      dialog.current.addEventListener('click', handleDialogEvent)
-    } else {
-      dialog.current.removeEventListener('click', handleDialogEvent)
-    }
-
-    return () => {
-      dialog.current.removeEventListener('click', handleDialog)
-    }
-  }, [dialogStatus])
 
   return (
     <header className='Header'>
-      <div className="logo" onClick={handleDialog}>
-        <Image src={Logo} width={30} />
+      <div className="logo" onClick={handleMenuDialog}>
+        <Image src={Logo} width={30} alt='logo' />
       </div>
       <nav className='nav-links'>
         <div className='shown-links'>
@@ -58,26 +43,12 @@ export default function Header() {
           <Link href={'/products/category/all-categories'}>Categorias</Link>
         </div>
 
-        <dialog ref={dialog} className='categories-list'>
-
-          <Link className='title highlight' href={'/'}
-            onClick={handleDialog}>
-            Destaques</Link>
-          <p className='close-bt' onClick={handleDialog}>X</p>
-
-          <p className='title'>Categorias:</p>
-
-          {categoryMock.map(category => (
-            <Link key={category.id}
-              onClick={handleDialog}
-              href={`/products/category/${category.slug}`}
-              className='item'
-            >
-              {category.name}
-            </Link>
-          ))}
-
-        </dialog>
+        <MenuDialog
+          menuDialog={menuDialog}
+          handleMenuDialog={handleMenuDialog}
+          categoryMock={categoryMock}
+          dialogStatus={dialogStatus}
+        />
 
       </nav>
       <Link href={'/cart'}>Carrinho</Link>

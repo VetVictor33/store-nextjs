@@ -18,7 +18,9 @@ export default function Home() {
     <>
       <Banner />
       <Highlight />
+      <p className="main-title">Ofertas</p>
       <Sales />
+      <p className="main-title">Categorias</p>
       <Categories />
     </>
   )

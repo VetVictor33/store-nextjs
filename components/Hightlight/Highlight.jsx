@@ -16,7 +16,7 @@ export default function Highlight() {
         <div className='Highlight'>
             <div className='itens'>
                 {highlightMock.map(item => (
-                    <Image key={item.id} src={item.img} />
+                    <Image key={item.id} src={item.img} alt={`Highlight-${item.id}`} />
                 ))}
             </div>
         </div>
