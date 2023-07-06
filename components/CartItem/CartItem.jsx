@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import './CartItem.css';
-import { refactorPrice } from '@/utils/refactorPrice';
+import { refactorCurrencyFromCents } from '@/utils/refactor';
 
 export default function CartItem({ item }) {
     const { slug, name, price } = item;
@@ -8,7 +8,7 @@ export default function CartItem({ item }) {
         <div className='CartItem'>
             <Image src={slug} alt={name} />
             <p className='name'>{name}</p>
-            <p className='price'>{refactorPrice(price, 'R$')}</p>
+            <p className='price'>{refactorCurrencyFromCents(price)}</p>
         </div>
     )
 }

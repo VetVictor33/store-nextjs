@@ -9,6 +9,7 @@ import shoes2 from '@/public/assets/products/shoes2.jpg'
 import Arrow from '@/public/assets/icons/arrow.svg'
 import Image from 'next/image'
 import './Sales.css'
+import { refactorCurrencyFromCents } from '@/utils/refactor'
 
 const productsMock = [
   { id: 1, name: 'Kit de Maquiagem', price: 19999, category: 'Beleza', slug: makeup },
@@ -62,8 +63,8 @@ export default function Sales() {
                 <div key={`${category.id}-info`} className='info'>
                   <p key={`${category.id}-name`} className='name'>{category.name}</p>
                   <div className="prices">
-                    <p key={`${category.id}-price`} className='old-price'>R$ {category.price / 100}</p>
-                    <p key={`${category.id}-sale-price`} className='sale-price'>R$ {((category.price / 100) * saleMock).toFixed(2)}</p>
+                    <p key={`${category.id}-price`} className='old-price'>{refactorCurrencyFromCents(category.price)}</p>
+                    <p key={`${category.id}-sale-price`} className='sale-price'>{refactorCurrencyFromCents(category.price * saleMock)}</p>
                   </div>
                 </div>
                 <Image src={category.slug} alt={category.name} />

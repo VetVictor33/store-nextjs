@@ -7,7 +7,6 @@ import phone from '@/public/assets/products/phone.jpg';
 import shoes from '@/public/assets/products/shoes.jpg';
 import shoes2 from '@/public/assets/products/shoes2.jpg';
 import CartItem from '../CartItem/CartItem';
-import { totalPrice } from '@/utils/refactorPrice';
 
 const itensMock = [
     { id: 1, name: 'Kit de Maquiagem', price: 19999, category: 'Beleza', slug: makeup },
@@ -20,8 +19,6 @@ const itensMock = [
 
 export default function CartDialog({ cartDialog, handleCartDialog }) {
 
-    const itens = localStorage.getItem('cart');
-
     return (
         <dialog ref={cartDialog} className="CartDialog">
             <div className='header'>
@@ -32,9 +29,9 @@ export default function CartDialog({ cartDialog, handleCartDialog }) {
             {itensMock ?
                 <>
                     {itensMock.map(item => (
-                        <CartItem item={item} />
+                        <CartItem key={item.id} item={item} />
                     ))}
-                    <p className='total'>Total: {totalPrice(itensMock, 'R$')}</p>
+                    <p className='total'>Total: 'TODO'</p>
                 </>
                 :
                 <h1 className='empty-cart'>Carrinho vazio!</h1>
