@@ -16,12 +16,11 @@
     padding: 0 var(--lateral-padding);
 }
 
-.Highlight .itens>img {
-    border: 1px solid gray;
+.Highlight .itens img {
     border-radius: var(--regular-border-radious);
-    width: 30vw;
-    height: var(--highlight-element-high);
-    opacity: 0.95;
+    width: 30vw !important;
+    height: var(--highlight-element-high) !important;
+    opacity: 0.85 !important;
 }
 
 .Highlight .itens>img:hover {

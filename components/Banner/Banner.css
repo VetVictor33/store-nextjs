@@ -10,9 +10,9 @@
     height: 100%;
 }
 
-.Banner .carousel .image {
-    width: 100vw;
-    height: 50vh;
+.Banner .carousel img {
+    width: 100vw !important;
+    height: 50vh !important;
     position: relative;
     display: flex;
     align-items: center;
