@@ -73,6 +73,6 @@
 }
 
 .Categories .img-div img {
-    width: calc(33vw - ((25px/3)));
-    height: calc(33vw - ((25px/3)));
+    width: calc(33vw - ((25px/3))) !important;
+    height: calc(33vw - ((25px/3))) !important;
 }

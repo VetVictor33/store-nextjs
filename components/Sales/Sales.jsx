@@ -1,12 +1,12 @@
 "use client"
 import { performRequest } from '@/lib/datocms'
+import { SALES_QUERY } from '@/lib/querys'
 import Arrow from '@/public/assets/icons/arrow.svg'
 import { refactorCurrencyFromCents } from '@/utils/refactor'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { Image as DatoImage } from "react-datocms"
 import './Sales.css'
-import { SALES_QUERY } from '@/lib/querys'
 
 export default function Sales() {
   const [sales, setSales] = useState([]);
