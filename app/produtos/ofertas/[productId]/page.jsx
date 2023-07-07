@@ -16,8 +16,16 @@ export default function ProductPage() {
 
     const handleAddToCart = () => {
         const salePrice = productOnSale.price * sale
-        const product = { ...productOnSale, price: salePrice }
+        let product = { ...productOnSale, price: salePrice }
+        let amount = 1
         const cart = getItem('cart')
+        cart?.forEach((item, index) => {
+            if (item.id === product.id) {
+                cart.splice(index, 1)
+                amount += item.amount
+            }
+        })
+        product = { ...product, amount }
         if (cart) {
             cart.push(product)
             setItem('cart', cart)
