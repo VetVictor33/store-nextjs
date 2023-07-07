@@ -7,10 +7,13 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { Image as DatoImage } from "react-datocms"
 import './Sales.css'
+import { useRouter } from 'next/navigation'
+import { setItem } from '@/utils/storage'
 
 export default function Sales() {
   const [sales, setSales] = useState([]);
   const [page, setPage] = useState(Math.floor((sales?.length) / -3))
+  const router = useRouter()
 
   const handlePageChange = (change) => {
     switch (change) {
@@ -35,8 +38,9 @@ export default function Sales() {
 
   useEffect(() => {
     async function getData() {
-      const { data: allSales } = await performRequest({ query: SALES_QUERY });
-      setSales(allSales.allSales)
+      const { data } = await performRequest({ query: SALES_QUERY });
+      setSales(data.allSales)
+      setItem('productsOnSale', data.allSales)
     }
     getData()
   }, [])
@@ -53,7 +57,9 @@ export default function Sales() {
       <div className="carousel" style={{ transform: `translateX(${page * 32}vw)` }} >
         {sales &&
           sales.map(({ id, productOnSale, sale }) => (
-            <div key={id}>
+            <div key={id} className='element-div'
+              onClick={() => router.push(`/produtos/ofertas/${id}`)}
+            >
               <div key={`${id}-img`} className='img-div'>
                 <div key={`${id}-info`} className='info'>
                   <p key={`${id}-name`} className='name'>{productOnSale.name}</p>

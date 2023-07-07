@@ -1,11 +1,17 @@
+"use client"
 import './CartDialog.css';
 
 import CartItem from '../CartItem/CartItem';
-import { useState } from 'react';
+import { getItem } from '@/utils/storage';
+import { refactorCurrencyFromCents } from '@/utils/refactor';
 
 
 export default function CartDialog({ cartDialog, handleCartDialog }) {
-    const [itensMock, set] = useState([])
+    const cart = getItem('cart')
+    const priceArray = cart.map(item => item.price)
+    const totalprice = priceArray.reduce((previous, current) => {
+        return previous + current
+    })
 
     return (
         <dialog ref={cartDialog} className="CartDialog">
@@ -14,12 +20,12 @@ export default function CartDialog({ cartDialog, handleCartDialog }) {
                 <p className='close-bt' onClick={handleCartDialog}>X</p>
             </div>
 
-            {itensMock.length ?
+            {cart.length ?
                 <>
-                    {itensMock.map(item => (
-                        <CartItem key={item.id} item={item} />
+                    {cart.map(item => (
+                        <CartItem key={item.id * Math.random()} item={item} />
                     ))}
-                    <p className='total'>Total:</p>
+                    <p className='total'>{refactorCurrencyFromCents(totalprice)}</p>
                 </>
                 :
                 <h1 className='empty-cart'>Carrinho vazio!</h1>

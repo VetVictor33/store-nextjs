@@ -1,10 +1,13 @@
 export const getItem = (key) => {
-    return localStorage.getItem(key)
+    const item = localStorage.getItem(key)
+    const jsonItem = JSON.parse(item)
+    return jsonItem
 }
 
 export const setItem = (key, value) => {
     if (!key || !value) return
-    return localStorage.setItem(key, value)
+    const stringfiedValue = JSON.stringify(value)
+    return localStorage.setItem(key, stringfiedValue)
 }
 
 export const removeItem = (key) => {

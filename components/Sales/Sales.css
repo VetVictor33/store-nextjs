@@ -75,8 +75,9 @@
     border-radius: var(--card-border-radious);
 }
 
-.Sales .img-div:hover {
+.Sales .element-div:hover {
     cursor: pointer;
+    transform: scale(1.05);
 }
 
 .Sales .img-div .info {

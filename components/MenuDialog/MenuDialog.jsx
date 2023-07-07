@@ -23,7 +23,7 @@ export default function MenuDialog({ menuDialog, categoryMock, handleMenuDialog,
             {categoryMock.map(category => (
                 <Link key={category.id}
                     onClick={handleMenuDialog}
-                    href={`/products/category/${category.slug}`}
+                    href={`/products/categorias/${category.slug}`}
                     className='item'
                 >
                     {category.name}
