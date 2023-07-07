@@ -1,28 +1,16 @@
 "use client"
-import React, { useState } from 'react'
-import makeup from '@/public/assets/products/makeup.jpg'
-import pans from '@/public/assets/products/pans.jpg'
-import jacket from '@/public/assets/products/jacket.jpg'
-import phone from '@/public/assets/products/phone.jpg'
-import shoes from '@/public/assets/products/shoes.jpg'
-import shoes2 from '@/public/assets/products/shoes2.jpg'
+import { performRequest } from '@/lib/datocms'
 import Arrow from '@/public/assets/icons/arrow.svg'
-import Image from 'next/image'
-import './Sales.css'
 import { refactorCurrencyFromCents } from '@/utils/refactor'
+import Image from 'next/image'
+import { useEffect, useState } from 'react'
+import { Image as DatoImage } from "react-datocms"
+import './Sales.css'
+import { SALES_QUERY } from '@/lib/querys'
 
-const productsMock = [
-  { id: 1, name: 'Kit de Maquiagem', price: 19999, category: 'Beleza', slug: makeup },
-  { id: 2, name: 'Jogo de panelas', price: 49999, category: 'Cozinha', slug: pans },
-  { id: 3, name: "Jaqueta Rock 'n' Roll", price: 9999, category: 'Vestimenta', slug: jacket },
-  { id: 4, name: 'uPhone23', price: 1500000, category: 'Eletrônicos', slug: phone },
-  { id: 5, name: 'Mike', price: 29999, category: 'Sapatos', slug: shoes },
-  { id: 6, name: 'Saddida', price: 16999, category: 'Esporte', slug: shoes2 },
-]
-
-const saleMock = 0.75
 export default function Sales() {
-  const [page, setPage] = useState(Math.floor((productsMock.length - 3) / -2))
+  const [sales, setSales] = useState([]);
+  const [page, setPage] = useState(Math.floor((sales?.length) / -3))
 
   const handlePageChange = (change) => {
     switch (change) {
@@ -36,7 +24,7 @@ export default function Sales() {
         break;
       case '+':
         setPage((prevPage) => {
-          if (prevPage === (productsMock.length - 3) * -1) {
+          if (prevPage === (sales?.length - 3) * -1) {
             return prevPage
           }
           return prevPage - 1
@@ -45,6 +33,13 @@ export default function Sales() {
     }
   }
 
+  useEffect(() => {
+    async function getData() {
+      const { data: allSales } = await performRequest({ query: SALES_QUERY });
+      setSales(allSales.allSales)
+    }
+    getData()
+  }, [])
   return (
     <div className='Sales'>
       <div className="buttons">
@@ -56,18 +51,20 @@ export default function Sales() {
         </div>
       </div>
       <div className="carousel" style={{ transform: `translateX(${page * 32}vw)` }} >
-        {
-          productsMock.map(category => (
-            <div key={category.id}>
-              <div key={`${category.id}-img`} className='img-div'>
-                <div key={`${category.id}-info`} className='info'>
-                  <p key={`${category.id}-name`} className='name'>{category.name}</p>
+        {sales &&
+          sales.map(({ id, productOnSale, sale }) => (
+            <div key={id}>
+              <div key={`${id}-img`} className='img-div'>
+                <div key={`${id}-info`} className='info'>
+                  <p key={`${id}-name`} className='name'>{productOnSale.name}</p>
                   <div className="prices">
-                    <p key={`${category.id}-price`} className='old-price'>{refactorCurrencyFromCents(category.price)}</p>
-                    <p key={`${category.id}-sale-price`} className='sale-price'>{refactorCurrencyFromCents(category.price * saleMock)}</p>
+                    <p key={`${id}-price`} className='old-price'>{refactorCurrencyFromCents(productOnSale.price)}</p>
+                    <p key={`${id}-sale-price`} className='sale-price'>{refactorCurrencyFromCents(+productOnSale.price * sale)}</p>
                   </div>
                 </div>
-                <Image src={category.slug} alt={category.name} />
+                <div className='img-div'>
+                  <DatoImage data={productOnSale.image.responsiveImage} />
+                </div>
               </div>
             </div>
           ))

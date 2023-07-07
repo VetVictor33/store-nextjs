@@ -77,7 +77,6 @@
 
 .Sales .img-div:hover {
     cursor: pointer;
-    transform: scale(1.033);
 }
 
 .Sales .img-div .info {
@@ -116,8 +115,9 @@
 }
 
 .Sales .img-div img {
-    width: calc(33vw - ((25px/3)));
-    height: calc(33vw - ((25px/3)));
+    width: calc(33vw - ((25px/3))) !important;
+    height: calc(33vw - ((25px/3))) !important;
+    z-index: -1;
 }
 
 @keyframes blink {
