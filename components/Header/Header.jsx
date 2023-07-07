@@ -8,7 +8,7 @@ import './Header.css'
 import MenuDialog from '../MenuDialog/MenuDialog'
 import CartDialog from '../CartDialog/CartDialog'
 
-const categoryMock = [
+const categories = [
   { id: 1, name: 'Eletrônicos', slug: 'eletronicos' },
   { id: 2, name: 'Cozinha', slug: 'cozinha' },
   { id: 3, name: 'Lar', slug: 'lar' },
@@ -52,13 +52,13 @@ export default function Header() {
       <nav className='nav-links'>
         <div className='shown-links'>
           <Link href={'/'}>Destaques</Link>
-          <Link href={'/products/category/all-categories'}>Categorias</Link>
+          <Link href={'/produtos/categorias'}>Categorias</Link>
         </div>
 
         <MenuDialog
           menuDialog={menuDialog}
           handleMenuDialog={handleMenuDialog}
-          categoryMock={categoryMock}
+          categoryMock={categories}
         />
 
       </nav>

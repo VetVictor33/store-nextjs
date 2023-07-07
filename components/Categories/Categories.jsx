@@ -6,9 +6,13 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import './Categories.css'
 import { Image as DatoImage } from "react-datocms"
+import { setItem } from '@/utils/storage'
+import { useRouter } from 'next/navigation'
+import { removeEspecialCharacter } from '@/utils/refactor'
 
 export default function Categories() {
     const [categories, setCategories] = useState([]);
+    const navigate = useRouter()
     const [page, setPage] = useState(Math.floor((categories?.length) / -2))
 
     const handlePageChange = (change) => {
@@ -34,8 +38,9 @@ export default function Categories() {
 
     useEffect(() => {
         async function getData() {
-            const { data: allCategories } = await performRequest({ query: CATEGORIES_QUERY });
-            setCategories(allCategories.allCategories)
+            const { data } = await performRequest({ query: CATEGORIES_QUERY });
+            setCategories(data.allCategories)
+            setItem('categories', data.allCategories)
         }
         getData()
     }, [])
@@ -52,7 +57,9 @@ export default function Categories() {
             <div className="carousel" style={{ transform: `translateX(${page * 32}vw)` }} >
                 {categories &&
                     categories.map(category => (
-                        <div key={category.id}>
+                        <div key={category.id}
+                            onClick={() => navigate.push(`/produtos/categorias/${removeEspecialCharacter(category.name)}`)}
+                        >
                             <div key={`${category.id}-img`} className='img-div'>
                                 <p key={`${category.id}-title`} className='title'>{category.name}</p>
                                 <DatoImage data={category.image.responsiveImage} />

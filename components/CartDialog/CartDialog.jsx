@@ -5,15 +5,12 @@ import CartItem from '../CartItem/CartItem';
 import { getItem } from '@/utils/storage';
 import { refactorCurrencyFromCents } from '@/utils/refactor';
 import { useRouter } from 'next/navigation';
+import { getTotalPrice } from '@/utils/cartUtils';
 
 
 export default function CartDialog({ cartDialog, handleCartDialog }) {
     const cart = getItem('cart')
-    const priceArray = cart?.map(item => item.price)
-    const totalprice = priceArray?.reduce((previous, current) => {
-        return previous + current
-    })
-
+    const totalPrice = getTotalPrice(cart)
     const navigate = useRouter()
 
     return (
@@ -26,7 +23,7 @@ export default function CartDialog({ cartDialog, handleCartDialog }) {
             {cart?.length ?
                 <>
                     {cart.map(item => (
-                        <CartItem key={item.id * Math.random()} item={item} />
+                        <CartItem key={item.id} item={item} />
                     ))}
                 </>
                 :
@@ -35,7 +32,7 @@ export default function CartDialog({ cartDialog, handleCartDialog }) {
 
             <div className='total'>
                 {cart?.length &&
-                    <p className='total'>{refactorCurrencyFromCents(totalprice)}</p>}
+                    <p className='total'>{refactorCurrencyFromCents(totalPrice)}</p>}
                 <button
                     onClick={() => navigate.push('/carrinho')}
                 >Ir para o carrinho</button>

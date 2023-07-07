@@ -5,3 +5,7 @@ export function refactorCurrencyFromCents(price) {
   })
   return refactoredPrice
 }
+
+export function removeEspecialCharacter(word) {
+  return word.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase()
+}

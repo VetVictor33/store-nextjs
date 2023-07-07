@@ -1,12 +1,38 @@
-.CartItem>img {
-    width: 130px;
-    height: 130px;
+.CartItem {
+    margin: 15px 0
+}
 
-    border-radius: var(--regular-border-radious);
+.CartItem .img-div {
+    margin: auto;
+    width: 85vw;
+}
+
+.CartItem .buttons-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.CartItem .buttons-div button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    width: 20px;
 }
 
 .CartItem .name,
 .CartItem .price {
     text-align: center;
     font-size: var(--small-font);
+}
+
+.CartItem .name {
+    font-size: var(--medium-font);
+}
+
+.CartItem .total-price-div {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
 }
